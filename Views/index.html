@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+    <head>
+        <meta name="viewport" content="witdh= device-width, initial-scale=1">
+        <title>Sample App</title>
+        <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../Assets/css/styles.css">
+    </head>
+    <body>
+       <div class='container' id='body'>
+            <div class='row'>
+                <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
+                    <h2><span class='glyphicon glyphicon-user'></span> Contacts <a href='add.html' class='btn btn-info'><span class='glyphicon glyphicon-plus'></span></a></h2>
+                    <ul id='contacts'></ul>
+                    <template id='contact-template'>
+                        <li data-id="{{id}}">
+                            <h4>
+                                <span class='noedit name'>{{name}}</span>
+                                <input type="text" required placeholder="Name"  class='edit name'/>
+                            </h4>                        
+                             <h5>
+                                <span class='noedit number'>{{number}}</span>
+                                <input type="text" required placeholder="Contact Number" class='edit number'/>
+                            </h5>
+                             <h5>
+                                <span class='noedit email'>{{email}}</span>
+                                <input type="email" required placeholder="Email Address" class='edit email'/>
+                            </h5>
+                            <button data-id='{{id}}' class='noedit remove btn btn-default'><span class='glyphicon glyphicon-remove'></span></button>
+                            <button class='noedit editContact btn btn-default'><span class='glyphicon glyphicon-pencil'></span></button>
+                            <button class='edit cancelEdit btn btn-default'>Cancel</button> 
+                            <button class='edit saveEdit btn btn-default'>Save</button>
+                        </li>                    
+                    </template>
+                </div>
+            </div>
+       </div>
+        
+    <script src="../Assets/js/jquery-1.12.3.min.js"></script> 
+    <script src="../Assets/js/main.js"></script>
+    <script src="../Assets/js/mustache.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+    <head>
+        <meta name="viewport" content="witdh= device-width, initial-scale=1">
+        <title>Sample App</title>
+        <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../Assets/css/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-xs-12 col-sm-12">
+                    <h2><span class='glyphicon glyphicon-plus'></span> Add New Contact</h2>
+                    <form id='add-form' action='#' method='post' class='text-center'>
+                        <input type="text" id='name' required name="name" placeholder="Name" class="form-control">
+                        <input type="text" id= 'number' required name="number" placeholder="Mobile Number" class="form-control">
+                        <input type="email" id='email' required name="email" placeholder="Email Address" class="form-control">
+                        <a href='index.html' class='btn btn-default'>Go Back</a>
+                        <input type="submit" value="Save" id="add-contact" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id='content'></div>
+    <script src="../Assets/js/jquery-1.12.3.min.js"></script> 
+    <script src="../Assets/js/main.js"></script>
+    </body>
+</html>
