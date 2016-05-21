@@ -14,7 +14,7 @@ $(function(){
   $('#body').show(function(){
     $.ajax({
       type:'GET',
-      url:'../Jobs/ViewContact.php',
+      url:'Jobs/ViewContact.php',
       success:function(data){
           var jsonData = $.parseJSON(data);
           $(jsonData).each(function(key, value){
@@ -41,7 +41,7 @@ $(function(){
       data: data,
       encode: 'json',
       success: function(){
-        location.href = 'http://localhost/activity/app/views/index.html';
+        location.href = 'http://localhost/crud/app/index.html';
       },
       error: function(){
         console.log('Error')
@@ -59,7 +59,7 @@ $(function(){
 
     $.ajax({
       type:'POST',
-      url:'../Jobs/DeleteContact.php',
+      url:'Jobs/DeleteContact.php',
       data: id,
       encode: 'json',
       success: function(){
@@ -96,7 +96,7 @@ $(function(){
 
     $.ajax({
       type: 'POST',
-      url:'../Jobs/UpdateContact.php',
+      url:'Jobs/UpdateContact.php',
       data: data,
       encode: 'json',
       success: function(){
