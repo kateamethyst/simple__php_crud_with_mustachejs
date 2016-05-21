@@ -2,5 +2,5 @@
 include('../Database/TableClass.php');
 
 $DB = new TableClass('contacts');
-$result = $DB->delete($_GET['id']);
+$result = $DB->delete($_POST['id']);
 echo $result;

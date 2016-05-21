@@ -16,10 +16,10 @@ $(function(){
       type:'GET',
       url:'../Jobs/ViewContact.php',
       success:function(data){
-        var jsonData = $.parseJSON(data);
-        $(jsonData).each(function(key, value){
-          addContact(value);
-        });
+          var jsonData = $.parseJSON(data);
+          $(jsonData).each(function(key, value){
+            addContact(value);
+          });
       },
       error:function(data){
         console.log('Error');
@@ -51,13 +51,17 @@ $(function(){
 
   $contacts.delegate('.remove', 'click', function(){
 
-    var $id = $(this).attr('data-id');
+    var id = {
+      'id': $(this).attr('data-id'),
+    };
     var $li = $(this).closest('li');
     var self = this;
 
     $.ajax({
-      type:'DELETE',
-      url:'../Jobs/DeleteContact.php?id=' + $id,
+      type:'POST',
+      url:'../Jobs/DeleteContact.php',
+      data: id,
+      encode: 'json',
       success: function(){
         $li.fadeOut(500, function(){
           $(this).remove();
@@ -87,11 +91,12 @@ $(function(){
       'name'    : $li.find('input.name').val(),
       'number'  : $li.find('input.number').val(),
       'email'   : $li.find('input.email').val(),
+      'id'      : $li.attr('data-id'),
     }
 
     $.ajax({
       type: 'POST',
-      url:'../Jobs/UpdateContact.php?id=' + $li.attr('data-id'),
+      url:'../Jobs/UpdateContact.php',
       data: data,
       encode: 'json',
       success: function(){
